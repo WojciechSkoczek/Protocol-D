@@ -5,8 +5,6 @@ type: software
 authors:
   - family-names: "Skoczek"
     given-names: "Wojciech"
-  - family-names: "ChatGPT"
-    given-names: "OpenAI"
 version: "0.2.0"
 date-released: "2026-02-15"
 license: "MIT"
