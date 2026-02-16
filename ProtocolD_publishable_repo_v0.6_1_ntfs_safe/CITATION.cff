@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it."
+title: "Protocol D — BAO-anchored dipole harness and operator tests"
+type: software
+authors:
+  - family-names: "Skoczek"
+    given-names: "Wojciech"
+  - family-names: "ChatGPT"
+    given-names: "OpenAI"
+version: "0.2.0"
+date-released: "2026-02-15"
+license: "MIT"
+repository-code: ""
+keywords:
+  - cosmology
+  - dipole
+  - BAO
+  - survey systematics
+  - operator model

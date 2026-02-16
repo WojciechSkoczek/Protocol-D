@@ -1,0 +1,11 @@
+Monte Carlo summary (LoTSS+CatWISE+NVSS | baseline)
+N samples: 1000
+
+⟨l⟩ = 230.3°  (σ = 11.2°)
+⟨b⟩ = 18.5°  (σ = 9.6°)
+
+⟨ΔAICc⟩ = -42.2  (σ = 14.6)
+⟨Δθ_CMB⟩ = 41.2°  (σ = 9.6°)
+
+⟨β⟩ = 0.248  (σ = 0.035)
+⟨coherence⟩ = 29.5°  (σ = 10.2°)

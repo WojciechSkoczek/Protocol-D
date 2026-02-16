@@ -1,0 +1,5 @@
+input,variant,model,g_l,g_b,dAICc,mean_angle,std_angle,n_tracers,delta_to_cmb_deg
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5.csv,2MRS_clean,BAO_P1,230.315,19.028,-39.310678,20.4,13.99,3,39.92418697594547
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5.csv,baseline,BAO_P1,230.315,19.028,-39.310678,20.4,13.99,3,39.92418697594547
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5.csv,2MRS_clean,BAO_P1,236.701,36.875,-34.424952,32.2,20.64,3,22.936850764352418
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5.csv,baseline,BAO_P1,238.489,35.374,-41.950593,28.66,19.24,3,22.805822806122904

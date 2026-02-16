@@ -1,0 +1,21 @@
+cosmology:
+  H0: 70.0
+  Om0: 0.3
+  r_bao_mpc: 147.0
+  bao_p: 1.0
+cmb_dipole_galactic_deg:
+  l: 264.021
+  b: 48.253
+covariance:
+  n_samples: 4000
+  floor: 1.0e-10
+robust_loss:
+  use_huber: true
+  huber_delta: 2.5
+operator_model_O2:
+  t_definition: t=1 for Quaia points, else 0
+  amplitude: a0 + a_bmin*(bmin-30) + a_mag*(magcut-20.0)
+  default_quaia_bmin_for_zbins: 30
+  maskscan_error_floors:
+    sigma_mag: 0.003
+    sigma_dir_deg: 20.0

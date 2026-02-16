@@ -1,0 +1,5 @@
+input,variant,model,g_l,g_b,dAICc,mean_angle,std_angle,n_tracers,delta_to_cmb_deg
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,2MRS_clean,BAO_P1,256.798,44.302,-37.811503,37.55,18.68,6,6.361908255407054
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,BAO_P1,256.798,44.302,-37.811503,37.55,18.68,6,6.361908255407054
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,2MRS_clean,BAO_P1,263.365,52.761,-40.908032,41.01,9.13,6,4.5272106918526065
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,BAO_P1,263.192,51.117,-47.683064,39.88,10.27,6,2.9137363300340566

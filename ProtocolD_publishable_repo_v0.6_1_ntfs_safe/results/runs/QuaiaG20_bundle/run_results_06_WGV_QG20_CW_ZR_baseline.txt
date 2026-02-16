@@ -1,0 +1,38 @@
+PROTOCOL D — INPUT PACK RUN (HARNESS)
+==============================================================================
+variant: baseline
+input: protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv
+
+MODEL COMPARISON
+  NULL : chi2=98.703359  k=0  AIC=98.703359  AICc=98.703359
+  BAO_P1: chi2=43.306009  k=3  AIC=49.306009  AICc=51.020295
+  ΔAIC  (BAO_P1-null) = -49.397350
+  ΔAICc (BAO_P1-null) = -47.683064
+
+FITTED GLOBAL EXCESS DIRECTION (BAO_P1)
+  g_hat (l,b) = (263.192°, 51.117°)
+
+BAO‑ANCHORED AMPLITUDES (effective)
+  beta = 0.20492141   p = 1.000   r_bao = 147.000 Mpc
+  cosmology for chi(z): H0=70.000  Om0=0.300
+  Per tracer: z_mean, chi[Mpc], w_i, A_eff
+  NVSS         z= 1.000  chi=  3303.83  w= 0.0444938  A_eff= 0.0091177387
+  RACS_low     z= 1.000  chi=  3303.83  w= 0.0444938  A_eff= 0.0091177387
+  CatWISE_W1lt16p5 z= 1.200  chi=  3763.43  w= 0.0390601  A_eff= 0.0080042506
+  Quaia_G<20.0_pmSig_lt2_0p6_1p0 z= 0.818  chi=  2836.79  w= 0.0518192  A_eff= 0.010618866
+  Quaia_G<20.0_pmSig_lt2_1p0_1p5 z= 1.259  chi=  3890.07  w= 0.0377885  A_eff= 0.0077436686
+  Quaia_G<20.0_pmSig_lt2_1p5_3p0 z= 2.063  chi=  5270.04  w= 0.0278935  A_eff= 0.0057159761
+
+COHERENCE ANGLES: angle(excess_i, g_hat)  (0° = aligned)
+  NVSS         angle =  25.27°
+  RACS_low     angle =  31.16°
+  CatWISE_W1lt16p5 angle =  48.96°
+  Quaia_G<20.0_pmSig_lt2_0p6_1p0 angle =  38.06°
+  Quaia_G<20.0_pmSig_lt2_1p0_1p5 angle =  55.91°
+  Quaia_G<20.0_pmSig_lt2_1p5_3p0 angle =  39.91°
+  mean = 39.88°   std = 10.27°
+
+CAVEATS
+  - Direction uncertainty is an approximation derived from RA/Dec errors.
+  - Full rigor requires using the original posterior/covariance from the catalogue dipole fit.
+  - This harness assumes the kinematic dipole points exactly in the CMB dipole direction.

@@ -1,0 +1,51 @@
+Tracer       Survey                               Dobs     Dkin   ratio            (l,b)      σmag    σdir
+----------------------------------------------------------------------------------------------------
+NVSS         NVSS                              0.01390  0.00405    3.43 ( 248.7, 35.7)   0.00290   18.34
+RACS_low     RACS-low                          0.01430  0.00412    3.47 ( 296.0, 65.7)   0.00240   16.39
+CatWISE_W1lt16p5 CatWISE AGNs W1<16.5              0.01510  0.00730    2.07 ( 238.4, 29.9)   0.00160    7.79
+Quaia_G20p5_z0p6_1p0 Quaia quasars (Gaia–unWISE) z∈[0  0.02496  0.00392    6.36 ( 329.3, 47.2)   0.00659   19.67
+Quaia_G20p5_z1p0_1p5 Quaia quasars (Gaia–unWISE) z∈[1  0.01586  0.00392    4.04 ( 340.6, 57.5)   0.00574   25.05
+Quaia_G20p5_z1p5_3p0 Quaia quasars (Gaia–unWISE) z∈[1  0.02024  0.00392    5.16 ( 324.1, 66.3)   0.00312   10.21
+
+PROTOCOL D — INPUT PACK RUN (HARNESS)
+==============================================================================
+variant: baseline
+input: /mnt/data/protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaia_zbins.csv
+
+MODEL COMPARISON
+  NULL : chi2=114.936125  k=0  AIC=114.936125  AICc=114.936125
+  BAO_P1: chi2=46.106868  k=3  AIC=52.106868  AICc=53.821153
+  ΔAIC  (BAO_P1-null) = -62.829257
+  ΔAICc (BAO_P1-null) = -61.114971
+
+FITTED GLOBAL EXCESS DIRECTION (BAO_P1)
+  g_hat (l,b) = (260.260°, 52.346°)
+
+BAO‑ANCHORED AMPLITUDES (effective)
+  beta = 0.22983801   p = 1.000   r_bao = 147.000 Mpc
+  cosmology for chi(z): H0=70.000  Om0=0.300
+  Per tracer: z_mean, chi[Mpc], w_i, A_eff
+  NVSS         z= 1.000  chi=  3303.83  w= 0.0444938  A_eff= 0.010226374
+  RACS_low     z= 1.000  chi=  3303.83  w= 0.0444938  A_eff= 0.010226374
+  CatWISE_W1lt16p5 z= 1.200  chi=  3763.43  w= 0.0390601  A_eff= 0.0089774955
+  Quaia_G20p5_z0p6_1p0 z= 0.818  chi=  2837.17  w= 0.0518122  A_eff= 0.011908408
+  Quaia_G20p5_z1p0_1p5 z= 1.261  chi=  3892.64  w= 0.0377636  A_eff= 0.0086795065
+  Quaia_G20p5_z1p5_3p0 z= 2.059  chi=  5263.27  w= 0.0279294  A_eff= 0.0064192437
+
+COHERENCE ANGLES: angle(excess_i, g_hat)  (0° = aligned)
+  NVSS         angle =  25.11°
+  RACS_low     angle =  31.21°
+  CatWISE_W1lt16p5 angle =  48.32°
+  Quaia_G20p5_z0p6_1p0 angle =  49.97°
+  Quaia_G20p5_z1p0_1p5 angle =  55.55°
+  Quaia_G20p5_z1p5_3p0 angle =  41.06°
+  mean = 41.87°   std = 10.72°
+
+CAVEATS
+  - Direction uncertainty is an approximation derived from RA/Dec errors.
+  - Full rigor requires using the original posterior/covariance from the catalogue dipole fit.
+  - This harness assumes the kinematic dipole points exactly in the CMB dipole direction.
+
+
+[OK] wrote protocol_d_run_results_protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaia_zbins_baseline.txt
+Saved: protocol_d_run_results_protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaia_zbins_baseline.txt

@@ -1,0 +1,37 @@
+Protocol D — Monte Carlo (LoTSS+CatWISE+NVSS) baseline
+Method: parametric MC sampling D_obs magnitude; LoTSS direction kept fixed to CMB (as per pack notes); others sampled with sigma_dir.
+
+N: 500
+dtheta_cmb_mean: 41.711226047680555
+dtheta_cmb_std: 9.838764981826147
+dtheta_cmb_p5: 26.290853318809337
+dtheta_cmb_p16: 31.956384166403026
+dtheta_cmb_p50: 41.30015586574822
+dtheta_cmb_p84: 51.73659349701185
+dtheta_cmb_p95: 57.27201532261305
+dAICc_mean: -38.21952971960903
+dAICc_std: 14.672734205250839
+dAICc_p5: -63.40378283724864
+dAICc_p16: -52.1393502964147
+dAICc_p50: -37.45460478663831
+dAICc_p84: -23.064078677793653
+dAICc_p95: -16.145706435090695
+dAIC_mean: -43.01952971960903
+dAIC_std: 14.672734205250839
+dAIC_p5: -68.20378283724864
+dAIC_p16: -56.939350296414695
+dAIC_p50: -42.25460478663831
+dAIC_p84: -27.864078677793653
+dAIC_p95: -20.945706435090692
+beta_mean: 0.23875343318522113
+beta_std: 0.03618478324947804
+beta_p5: 0.17962921902848913
+beta_p16: 0.20309334071079524
+beta_p50: 0.2403968378471025
+beta_p84: 0.27519612274728134
+beta_p95: 0.2951694912854683
+frac_dtheta_lt_10: 0.0
+frac_dtheta_lt_20: 0.014
+frac_dtheta_lt_30: 0.116
+frac_dAICc_lt_0: 1.0
+frac_dAICc_lt_-10: 0.99

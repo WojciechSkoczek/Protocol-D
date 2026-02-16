@@ -1,0 +1,13 @@
+pack,variant,tracer,sigma_factor,g_l,g_b,dAICc,std_angle,delta_to_cmb_deg
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,0.5,236.836,30.876,-38.709409,27.59,26.97147875114451
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,1.0,263.192,51.117,-47.683064,10.27,2.9137363300340566
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,1.5,280.094,56.478,-53.602007,13.1,12.750661558674002
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,2.0,288.807,57.94,-54.827822,16.34,17.601392743390573
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,3.0,297.396,58.749,-52.000097,19.72,22.13451004926702
+protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,5.0,304.397,59.016,-46.972283,22.5,25.74153648767654
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,0.5,233.614,24.328,-35.444968,31.99,33.837081568195266
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,1.0,256.798,44.302,-37.811503,18.68,6.361908255407054
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,1.5,275.979,52.334,-41.925915,15.0,8.646270870730037
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,2.0,287.28,54.817,-42.772359,15.79,15.790084408403445
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,3.0,298.456,56.053,-39.966319,18.92,22.242128134670114
+protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv,baseline,CatWISE_W1lt16p5,5.0,306.854,56.27,-35.161369,22.08,26.920677115210395
