@@ -1,4 +1,4 @@
-# RELEASE.md — Protocol D (publishable repo)
+﻿# RELEASE.md â€” Protocol D (publishable repo)
 
 This checklist is for producing a clean, citable, reproducible public release (e.g., GitHub + Zenodo).
 
@@ -9,7 +9,7 @@ This checklist is for producing a clean, citable, reproducible public release (e
 - [ ] **Scope statement is explicit** (analysis layer over derived dipole packs; no raw-catalogue remeasurement).  
       See: `docs/03_data_inputs.md`
 - [ ] **Public vs private data** is clearly separated:
-  - public: `data/packs/`, `data/aux_data_data/`, `results/bundles/`, `results/runs/`, `results/summary/`
+  - public: `data/packs/`, `data/aux_data/`, `results/bundles/`, `results/runs/`, `results/summary/`
   - private (optional, not committed): `data/raw/` (if ever used)
 
 ---
@@ -33,7 +33,7 @@ This checklist is for producing a clean, citable, reproducible public release (e
   - `results/summary/master_fits.csv`
   - `results/summary/master_invariance_axis_angles.csv`
   - `results/summary/master_identifiability_thresholds_RunR.csv`
-- [ ] Confirm the “publishable checklist” reads well:
+- [ ] Confirm the â€œpublishable checklistâ€ reads well:
   - `docs/07_key_claims.md`
 
 ---
@@ -68,8 +68,8 @@ Minimum standard:
 Use in a paper/preprint:
 
 > The analysis code and derived dipole input packs used in Protocol D are available in the public repository release.  
-> The repository contains derived measurement packs, summary tables, and canonical run outputs (Runs G–R).  
-> Raw sky catalogues and survey masks are not redistributed in this repository due to third‑party licensing and estimator-dependence; users may reproduce the analysis layer from the provided derived packs, or reconstruct the full pipeline privately using upstream data under their respective licences.
+> The repository contains derived measurement packs, summary tables, and canonical run outputs (Runs Gâ€“R).  
+> Raw sky catalogues and survey masks are not redistributed in this repository due to thirdâ€‘party licensing and estimator-dependence; users may reproduce the analysis layer from the provided derived packs, or reconstruct the full pipeline privately using upstream data under their respective licences.
 
 (If you add `data/raw/` instructions later, link to them here.)
 
@@ -86,7 +86,7 @@ Use in a paper/preprint:
 - [ ] Create a GitHub Release for the tag:
   - Title: `Protocol D v1.0.0`
   - Attach the source zip (optional, GitHub does it automatically)
-  - Include “Key claims” link (docs/07) and “Master tables” link (docs/06)
+  - Include â€œKey claimsâ€ link (docs/07) and â€œMaster tablesâ€ link (docs/06)
 
 ---
 
@@ -103,9 +103,9 @@ Use in a paper/preprint:
 
 ---
 
-## 7) Post-release verification (the “someone else” test)
+## 7) Post-release verification (the â€œsomeone elseâ€ test)
 
-- [ ] A colleague (or “future you”) downloads the release archive and follows only:
+- [ ] A colleague (or â€œfuture youâ€) downloads the release archive and follows only:
   - `README.md`
   - `docs/06_master_summary.md`
   - `docs/07_key_claims.md`
@@ -117,6 +117,7 @@ Use in a paper/preprint:
 
 Include in GitHub Release:
 
-- What’s new in this version (e.g., master tables + key claims)
+- Whatâ€™s new in this version (e.g., master tables + key claims)
 - Known limitations (no raw-catalogue remeasurement)
 - How to verify (point to docs/07)
+
