@@ -1,15 +1,15 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 message: "If you use this repository, please cite it."
 title: "Protocol D"
 type: software
+version: 0.6.2
+date-released: 2026-02-16
+license: MIT
+repository-code: "https://github.com/WojciechSkoczek/Protocol-D"
+url: "https://github.com/WojciechSkoczek/Protocol-D"
 authors:
   - family-names: Skoczek
     given-names: Wojciech
-repository-code: "https://github.com/WojciechSkoczek/Protocol-D"
-url: "https://github.com/WojciechSkoczek/Protocol-D"
-license: Apache-2.0
-version: "0.6.1"
-date-released: "2026-02-16"
 keywords:
   - cosmology
   - dipole

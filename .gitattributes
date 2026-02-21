@@ -1,11 +1,17 @@
 ﻿* text=auto eol=lf
 
+*.ps1 text eol=crlf
 *.bat text eol=crlf
 *.cmd text eol=crlf
-*.ps1 text eol=crlf
 
 *.png binary
 *.jpg binary
 *.jpeg binary
+*.gif binary
 *.pdf binary
 *.zip binary
+*.fits binary
+*.npy binary
+*.npz binary
+*.pkl binary
+*.parquet binary
