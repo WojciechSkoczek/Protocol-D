@@ -2,6 +2,8 @@
 
 Lightweight reproduction repository for the analysis harness used in Protocol D.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18726008.svg)](https://doi.org/10.5281/zenodo.18726008)
+
 ## What it does
 - compares NULL vs BAO_P1 models for a set of tracer dipoles
 - fits a global excess direction g_hat and BAO-anchored effective amplitudes A_eff
