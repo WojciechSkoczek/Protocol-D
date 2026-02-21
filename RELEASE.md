@@ -1,4 +1,4 @@
-﻿# RELEASE.md â€” Protocol D (publishable repo)
+# RELEASE.md â€” Protocol D (publishable repo)
 
 This checklist is for producing a clean, citable, reproducible public release (e.g., GitHub + Zenodo).
 

@@ -1,4 +1,4 @@
-﻿# Data provenance
+# Data provenance
 
 This repository is a publishable reproduction bundle for Protocol D.
 

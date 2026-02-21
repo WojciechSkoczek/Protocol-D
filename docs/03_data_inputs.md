@@ -1,4 +1,4 @@
-﻿# Data inputs and provenance
+# Data inputs and provenance
 
 ## Derived input packs (public-friendly)
 The analysis uses **derived packs** under `data/packs/`. Each row represents one dipole measurement and includes:
