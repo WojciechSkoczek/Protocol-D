@@ -1,4 +1,4 @@
-# Protocol D — BAO-anchored dipole harness (v0.1)
+# Protocol D â€” BAO-anchored dipole harness (v0.6.2)
 
 This is a lightweight reproduction repository for the *harness* used in Protocol D.
 
@@ -54,7 +54,7 @@ See `RELEASE.md` for a publishable release checklist (tagging, Zenodo DOI, and v
 
 ## Windows compatibility note
 
-To avoid Windows path-length issues, `results/runs/` uses short run folder names (RunG…RunR) and short pack IDs.
+To avoid Windows path-length issues, `results/runs/` uses short run folder names (RunGâ€¦RunR) and short pack IDs.
 See `results/runs/README.md` and `data/pack_ids.csv`.
 Original full-named pack files are archived as `data/packs_full.zip`.
 
