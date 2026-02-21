@@ -29,8 +29,6 @@ See RELEASE.md (tagging, Zenodo DOI, verification).
 ## Windows note
 On Windows, aux is a reserved device name (Win32/NTFS). This repo therefore uses data/aux_data/.
 
-## AI assistance
-See `docs/ai_assistance.md`.
-
-Context for researchers: docs/context_summary.txt
-
+## Context
+- Research context: docs/context_summary.txt
+- AI assistance disclosure: docs/ai_assistance.md
