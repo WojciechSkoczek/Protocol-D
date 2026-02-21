@@ -3,7 +3,7 @@
 help:
 	@echo "Targets:"
 	@echo "  setup         Create venv + install requirements"
-	@echo "  repro_bao     Reproduce BAO harness outputs"
+	@echo "  repro_bao      Reproduce BAO harness outputs"
 	@echo "  repro_operator Reproduce operator O2 fits (structure of Runs K–Q)"
 
 setup:
