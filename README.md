@@ -1,8 +1,8 @@
-# Protocol D - BAO-anchored dipole harness (v0.6.2)
+# Protocol D - BAO-anchored dipole harness (v0.6.5)
 
 Lightweight reproduction repository for the analysis harness used in Protocol D.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18726008.svg)](https://doi.org/10.5281/zenodo.18726008)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18726149.svg)](https://doi.org/10.5281/zenodo.18726149)
 
 ## What it does
 - compares NULL vs BAO_P1 models for a set of tracer dipoles
@@ -12,25 +12,31 @@ Lightweight reproduction repository for the analysis harness used in Protocol D.
 ## What it does not do
 - does not re-measure dipoles from raw catalogues (estimator + mask handling live upstream)
 
-## Quick start
+## Quick start (Linux/macOS/Git Bash)
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
+# BAO harness on all packs (baseline + 2MRS_clean)
 bash scripts/repro_bao_only.sh
+
+# Operator O2 reproduction (packs 03 + 06, both variants)
+bash scripts/repro_operator_runs.sh
 ```
-Outputs are written to REPRO_OUT/.
+
+Outputs are written to `REPRO_OUT/`.
 
 ## What to verify (publishable checks)
-- Key claims + where to verify: docs/07_key_claims.md
-- One-stop summary tables: docs/06_master_summary.md
+- Key claims + where to verify: `docs/07_key_claims.md`
+- One-stop summary tables: `docs/06_master_summary.md`
 
 ## Release checklist
-See RELEASE.md (tagging, Zenodo DOI, verification).
+See `RELEASE.md` (tagging, Zenodo DOI, verification).
 
 ## Windows note
-On Windows, aux is a reserved device name (Win32/NTFS). This repo therefore uses data/aux_data/.
+On Windows, `aux` is a reserved device name (Win32/NTFS). This repo therefore uses `data/aux_data/`.
 
 ## Context
-- Research context: docs/context_summary.txt
-- AI assistance disclosure: docs/ai_assistance.md
+- Research context: `docs/context_summary.txt`
+- AI assistance disclosure: `docs/ai_assistance.md`

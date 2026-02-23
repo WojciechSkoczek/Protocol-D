@@ -21,3 +21,5 @@ Checklist for producing a clean, citable, reproducible public release (GitHub + 
 - Trigger a GitHub Release and confirm Zenodo record (version, license, DOI).
 - Optionally add the DOI back to `README.md` and `CITATION.cff`.
 
+## Windows (Git Bash) note
+- If `bash scripts/*.sh` cannot find `python`, ensure your Windows Python is on PATH (Microsoft Store installs often live under `WindowsApps`). The scripts try to add `WindowsApps` automatically when running under Git Bash.

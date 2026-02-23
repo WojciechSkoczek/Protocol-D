@@ -44,7 +44,7 @@ def parse_run_text(text: str) -> Dict[str, object]:
         variant = m.group(1)
 
     input_pack = None
-    m = re.search(r"^input:\s*(\S+)\s*$", text, flags=re.MULTILINE)
+    m = re.search(r"^input:\s*(.+?)\s*$", text, flags=re.MULTILINE)
     if m:
         input_pack = m.group(1)
 
@@ -52,7 +52,7 @@ def parse_run_text(text: str) -> Dict[str, object]:
     dAICc = _float(re.search(r"ΔAICc \(BAO_P1-null\)\s*=\s*([\-\d\.]+)", text))
 
     # g_hat
-    m = re.search(r"g_hat \(l,b\) = \(([\d\.]+)°\,\s*([\d\.]+)°\)", text)
+    m = re.search(r"g_hat \(l,b\) = \(([-\d\.]+)°\,\s*([-\d\.]+)°\)", text)
     g_l = _float(m, 1)
     g_b = _float(m, 2)
 
@@ -122,8 +122,30 @@ def main() -> int:
         row["run_path"] = str(p)
         # simple tags to prevent accidental mixing
         inp = str(row.get("input_pack") or "")
-        row["pack_type"] = "quaia_zbins" if "quaia" in inp else "catwise_only"
-        row["dataset"] = "wagenveld" if "wagenveld" in inp else ("lotssswap" if "boehme" in inp else "unknown")
+        inp_l = inp.lower()
+        inp_u = inp.upper()
+
+        # pack type heuristics (works both for long filenames and short IDs like 03_BLM_QG20_CW_ZR.csv)
+        if ("QUAIA" in inp_u) or ("QG" in inp_u) or ("ZBIN" in inp_u):
+            row["pack_type"] = "quaia_zbins"
+        elif ("CATWISE" in inp_u) or ("_CW_" in inp_u) or ("CW" in inp_u):
+            row["pack_type"] = "catwise_only"
+        else:
+            row["pack_type"] = "unknown"
+
+        # dataset heuristics
+        if ("WGV" in inp_u) or ("WAGENVELD" in inp_l):
+            row["dataset"] = "wagenveld"
+        elif ("BLM" in inp_u) or ("BOEHME" in inp_l) or ("LOTSS" in inp_l):
+            row["dataset"] = "lotssswap"
+        else:
+            row["dataset"] = "unknown"
+
+        # a stable pack identifier (filename stem if possible)
+        try:
+            row["pack_id"] = Path(inp).stem
+        except Exception:
+            row["pack_id"] = inp
         rows.append(row)
 
     out_path = Path(args.out)
@@ -140,6 +162,7 @@ def main() -> int:
         "run_path",
         "pack_type",
         "dataset",
+        "pack_id",
         "variant",
         "input_pack",
         "g_l",

@@ -2,12 +2,13 @@
 
 help:
 	@echo "Targets:"
-	@echo "  setup         Create venv + install requirements"
+	@echo "  setup         Create venv (you still need to activate it) + install requirements"
 	@echo "  repro_bao      Reproduce BAO harness outputs"
 	@echo "  repro_operator Reproduce operator O2 fits (structure of Runs K–Q)"
 
 setup:
-	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
+	python -m venv .venv
+	@echo "Activate the venv and run: pip install -r requirements.txt"
 
 repro_bao:
 	bash scripts/repro_bao_only.sh

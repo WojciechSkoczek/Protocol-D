@@ -10,6 +10,8 @@ from dataclasses import dataclass
 from typing import Dict, List, Tuple
 from scipy.optimize import minimize
 
+import re
+
 from .core import (
     Observation, galactic_to_unit, cartesian_to_galactic, angle_deg,
     bao_weight, robust_whitened_loss
@@ -28,7 +30,6 @@ def parse_magcut_to_float(magcut) -> float | None:
     m = re.search(r"([0-9]+\.[0-9]+|[0-9]+)", s)
     return float(m.group(1)) if m else None
 
-import re
 
 def A_of(bmin: float | None, magcut: float | None, a0: float, a_bmin: float, a_mag: float) -> float:
     b = float(bmin) if bmin is not None and np.isfinite(bmin) else 30.0
@@ -155,27 +156,38 @@ def main():
     cfg = yaml.safe_load(pathlib.Path(args.config).read_text())
     cfg2 = {
         "cosmo": cfg["cosmology"],
-        "cmb": cfg["cmb_dipole_galactic_deg"],
-        "cov": {"n_samples": cfg["covariance"]["n_samples"], "floor": cfg["covariance"]["floor"]},
-        "robust": cfg["robust_loss"],
+        "cmb": cfg["cosmology"]["cmb_dipole_galactic_deg"],
+        "cov": {
+            "n_samples": cfg["covariance"]["n_samples"],
+            "floor": cfg["covariance"]["floor"],
+        },
+        "robust": cfg["covariance"]["robust_loss"],
         "operator": {
             "default_quaia_bmin_for_zbins": cfg["operator_model_O2"]["default_quaia_bmin_for_zbins"],
-            "maskscan_error_floors": cfg["operator_model_O2"]["maskscan_error_floors"],
-        }
+            "maskscan_error_floors": cfg["maskscan_error_floors"],
+        },
     }
+
 
     out_dir = pathlib.Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Default pack mapping: assumes packs are present from cleaned bundle
     pack_map = {
-        ("boehme","baseline"): "data/packs/protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv",
-        ("boehme","2MRS_clean"): "data/packs/protocol_d_input_pack_boehme2025_lotss_dr2_swap_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv",
-        ("wagenveld","baseline"): "data/packs/protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv",
-        ("wagenveld","2MRS_clean"): "data/packs/protocol_d_input_pack_wagenveld2025_tier1__zradio_1p0__catwise_w1lt16p5__quaiaG20p0_pmSiglt2_zbins.csv",
+        ("BLM_QG20", "baseline"):   "data/packs/03_BLM_QG20_CW_ZR.csv",
+        ("BLM_QG20", "2MRS_clean"): "data/packs/03_BLM_QG20_CW_ZR.csv",
+        ("WGV_QG20", "baseline"):   "data/packs/06_WGV_QG20_CW_ZR.csv",
+        ("WGV_QG20", "2MRS_clean"): "data/packs/06_WGV_QG20_CW_ZR.csv",
     }
 
-    maskscan = pathlib.Path("data/aux_data_data/quaia_dipole_maskscan.csv")
+    maskscan = pathlib.Path("data/aux_data/quaia_dipole_maskscan.csv")
+
+    # quick existence check (helps with fresh-zip reproducibility)
+    for (_pack, _variant), _path in pack_map.items():
+        if not pathlib.Path(_path).exists():
+            raise SystemExit(f"Missing pack file: {_path} (check data/packs/)")
+    if not maskscan.exists():
+        raise SystemExit(f"Missing maskscan file: {maskscan} (check data/aux_data/)")
 
     rows=[]
     for (pack,variant), path in pack_map.items():
