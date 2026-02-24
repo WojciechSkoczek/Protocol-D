@@ -9,7 +9,7 @@ repository-code: "https://github.com/WojciechSkoczek/Protocol-D"
 url: "https://github.com/WojciechSkoczek/Protocol-D"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.18726149
+    value: 10.5281/zenodo.18726007
 authors:
   - family-names: Skoczek
     given-names: Wojciech
