@@ -1,1 +1,1 @@
-from .run_operator import main
+"""Protocol D package."""
