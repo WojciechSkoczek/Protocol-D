@@ -2,14 +2,18 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it."
 title: "Protocol D"
 type: software
-version: "0.6.5"
-date-released: "2026-02-21"
+version: "0.6.6"
+date-released: "2026-02-24"
 license: MIT
 repository-code: "https://github.com/WojciechSkoczek/Protocol-D"
 url: "https://github.com/WojciechSkoczek/Protocol-D"
 identifiers:
+  # Concept DOI 
   - type: doi
     value: 10.5281/zenodo.18726007
+  # Version-specific DOI for v0.6.6
+  - type: doi
+    value: 10.5281/zenodo.18763371
 authors:
   - family-names: Skoczek
     given-names: Wojciech
