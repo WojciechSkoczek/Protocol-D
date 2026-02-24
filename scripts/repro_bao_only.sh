@@ -26,25 +26,24 @@ elif command -v py >/dev/null 2>&1; then
   PY_ARGS=(-3)
 else
   echo "[ERROR] Python not found in PATH (tried: python, python3, py)."
-  echo "        On Windows: install Python and/or add it to PATH."
+  echo "On Windows: install Python and/or add it to PATH."
   exit 127
 fi
+
+to_py_path() {
+  local p="$1"
+  if command -v cygpath >/dev/null 2>&1; then
+    cygpath -m "$p"   # C:/... (Windows-friendly)
+  else
+    echo "$p"
+  fi
+}
 
 echo "[INFO] Reproducing BAO harness outputs from packs -> ${OUT}"
 
 PACKS_DIR="${ROOT}/data/packs"
 SCRIPT="${ROOT}/src/protocol_d_run_input_pack_any_v2_bao.py"
 INDEXER="${ROOT}/src/index_runs.py"
-
-to_py_path() {
-  local p="$1"
-  if command -v cygpath >/dev/null 2>&1; then
-    # C:/... (Windows-friendly, avoids backslash escaping issues)
-    cygpath -m "$p"
-  else
-    echo "$p"
-  fi
-}
 
 SCRIPT_PY="$(to_py_path "$SCRIPT")"
 INDEXER_PY="$(to_py_path "$INDEXER")"
@@ -69,4 +68,4 @@ done
 
 "${PY}" "${PY_ARGS[@]}" "${INDEXER_PY}"   --runs_dir "${OUT_PY}"   --out "$(to_py_path "${OUT}/run_inventory.csv")"
 
-echo "[OK] Done. Inspect ${OUT}"
+echo "[OK] Done. Inspect: ${OUT}"
