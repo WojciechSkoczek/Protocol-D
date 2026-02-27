@@ -4,3 +4,6 @@ pandas>=1.5
 astropy>=5.2
 
 pyyaml
+
+astropy
+astropy-healpix
