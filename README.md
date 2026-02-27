@@ -40,3 +40,9 @@ On Windows, `aux` is a reserved device name (Win32/NTFS). This repo therefore us
 ## Context
 - Research context: `docs/context_summary.txt`
 - AI assistance disclosure: `docs/ai_assistance.md`
+
+## Bibliography (data sources)
+
+Protocol D analyses rely on several public survey catalogues. Please cite the underlying data releases when using results from this repository.
+
+See: `docs/09_bibliography.md` and `bib/protocol_d.bib`.
