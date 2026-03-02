@@ -1,0 +1,107 @@
+# Protocol D: Phase 1b universality sprint config (CLEAN-RADIO)
+# Uses the same local FITS filenames as configs/datasets_phase1b_all.yaml.
+# Purpose: test whether transfer strengthens in a cleaner, more conservative radio regime.
+# Changes vs MAX-STAT:
+# - global bmin increased to 30 deg (reduces Galactic contamination leakage)
+# - raised minimum flux cuts for NVSS and RACS (moves to brighter regimes)
+# - dec_split disabled (keep cell counts up)
+
+version: "phase1b-cleanradio-v1"
+defaults:
+  fit_nside: 64
+  map_nside: 64
+  frame: "galactic"
+  bmin_deg: 30
+  depth_bins_quantiles: [0.0, 0.30, 0.70, 1.0]
+  z_bins_quantiles:     [0.0, 0.30, 0.70, 1.0]
+  region_splits:
+    ra_jackknife_deg: [[0, 90], [90, 180], [180, 270], [270, 360]]
+    dec_split: false
+    ecliptic_lat_split_deg: 30
+
+datasets:
+  - id: "sixdfgs_dr3"
+    enabled: true
+    label: "6dFGS DR3 (southern galaxies)"
+    tracer_class: "galaxy"
+    family: "sixdfgs"
+    input: { kind: "fits", path: "data/raw/6dFGS_DR3.asu.fit" }
+    columns:
+      ra_deg:  "RAJ2000"
+      dec_deg: "DEJ2000"
+      z: { kind: "cz_kms", column: "cz", c_kms: 299792.458 }
+      depth_proxy: { kind: "magnitude", column: "bJmag", brighter_is_higher: false }
+    cuts:
+      bmin_deg: 30
+      cz_kms_min: 1
+    binning:
+      z_bins: "quantiles"
+      depth_bins: "none"
+
+  - id: "wise_assef_r90"
+    enabled: true
+    label: "WISE AGN (Assef et al. R90)"
+    tracer_class: "agn"
+    family: "wise_mid_ir"
+    input: { kind: "fits", path: "data/raw/WISE_Assef_R90.fit" }
+    columns:
+      ra_deg:  "ra"
+      dec_deg: "dec"
+      z: null
+      depth_proxy: { kind: "magnitude", column: "w2mpro", brighter_is_higher: false }
+    cuts: { bmin_deg: 30 }
+    binning:
+      z_bins: "none"
+      depth_bins: "quantiles"
+
+  - id: "wise_allwise_agn_secrest"
+    enabled: true
+    label: "AllWISE AGN (Secrest-style selection)"
+    tracer_class: "agn"
+    family: "wise_mid_ir"
+    input: { kind: "fits", path: "data/raw/AllWISE_AGN_Secrest.fits" }
+    columns:
+      ra_deg:  "ra"
+      dec_deg: "dec"
+      z: null
+      depth_proxy: { kind: "magnitude", column: "w2mpro", brighter_is_higher: false }
+    cuts: { bmin_deg: 30 }
+    binning:
+      z_bins: "none"
+      depth_bins: "quantiles"
+
+  - id: "nvss"
+    enabled: true
+    label: "NVSS (1.4 GHz radio sources)"
+    tracer_class: "radio"
+    family: "vla_radio"
+    input: { kind: "fits", path: "data/raw/NVSS_vizier.fit" }
+    columns:
+      ra_deg:  "RAJ2000"
+      dec_deg: "DEJ2000"
+      z: null
+      depth_proxy: { kind: "flux_mjy", column: "S1.4", brighter_is_higher: true }
+    cuts:
+      bmin_deg: 30
+      flux_mjy_min: 20
+    binning:
+      z_bins: "none"
+      depth_bins: "quantiles"
+
+  - id: "racs_dr1"
+    enabled: true
+    label: "RACS DR1 (ASKAP radio continuum)"
+    tracer_class: "radio"
+    family: "askap_radio"
+    input: { kind: "fits", path: "data/raw/RACS_DR1_galcut.fit" }
+    columns:
+      ra_deg:  "RAJ2000"
+      dec_deg: "DEJ2000"
+      z: null
+      depth_proxy: { kind: "flux_mjy", column: "Ftot", brighter_is_higher: true }
+    cuts:
+      bmin_deg: 30
+      flux_mjy_min: 15
+    binning:
+      z_bins: "none"
+      depth_bins: "quantiles"
