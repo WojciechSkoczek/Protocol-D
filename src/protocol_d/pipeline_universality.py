@@ -35,7 +35,7 @@ import astropy.units as u
 from astropy_healpix import HEALPix
 
 
-__RUNNER_VERSION__ = "stable-v7.0 (pathresolve+aliases+vmf+transfers)"
+__RUNNER_VERSION__ = "v0.6.7-universality-clean"
 
 
 # ----------------------------
@@ -391,13 +391,12 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--seed", type=int, default=12345)
     args = ap.parse_args()
 
     cfg = load_yaml(args.config)
     out_root = str(args.out)
     os.makedirs(out_root, exist_ok=True)
-    rng = np.random.default_rng(int(args.seed))
+    rng = np.random.default_rng(12345)
 
     defaults = cfg.get("defaults", {})
     fit_nside = int(defaults.get("fit_nside", 64))
